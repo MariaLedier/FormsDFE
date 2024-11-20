@@ -248,8 +248,6 @@
   font-weight: bold;
 }
 
-/* Estilo para os campos com erro */
-
 /* Estilos para os campos com erro */
 .form_input.error {
   border: 2px solid red; /* Borda vermelha para campos inválidos */
@@ -269,6 +267,13 @@
 .form_input.error + .error-message {
   display: block; /* Torna a mensagem visível quando o campo tem a classe "error" */
 }
+.regras-msg {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+  display: none; /* Inicialmente oculta */
+}
+
 /*Formulário*/
 
 /*FOOTER*/

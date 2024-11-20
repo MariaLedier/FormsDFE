@@ -61,6 +61,12 @@
                     required
                   />
                   <span class="error-message">Este campo é obrigatório.</span>
+                  <div id="regras-datanascimento" class="regras-msg">
+                    <p>
+                      Por favor, insira uma data de nascimento entre 5 e 18
+                      anos.
+                    </p>
+                  </div>
                 </div>
 
                 <!--RG-->
@@ -72,6 +78,7 @@
                     class="form_input"
                     id="rg"
                     placeholder="RG do Aluno"
+                    maxlength="12"
                     required
                   />
                   <span class="error-message">Este campo é obrigatório.</span>
@@ -86,9 +93,15 @@
                     class="form_input"
                     id="cpf"
                     placeholder="CPF do Aluno"
+                    maxlength="14"
                     required
                   />
-                  <span class="error-message">Este campo é obrigatório.</span>
+                  <span
+                    class="error-message"
+                    id="cpfError"
+                    style="display: none; color: red"
+                    >O CPF deve ser válido e no formato 000.000.000-00.</span
+                  >
                 </div>
 
                 <!-- SEXO -->
