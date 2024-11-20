@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <title>Cadastro Aluno</title>
+  </head>
+
+  <body>
+    <header class="main_header container">
+      <div class="content">
+        <div class="main_header_logo">
+          <img src="img/logo.png" alt="logo.png" title="Logo" />
+        </div>
+      </div>
+    </header>
+
+    <main class="main_content container">
+      <section class="section-seu-codigo container">
+        <div class="content">
+          <div class="box-artigo">
+            <!--Inicia Formulário-->
+            <div class="container_form">
+              <h1>Cadastro de Alunos</h1>
+              <p>* Obrigatório</p>
+
+              <form id="cadastro" class="form">
+                <!--Nome do aluno-->
+                <div class="form_grupo error">
+                  <label for="nome" class="form_input"
+                    >Nome completo do aluno:</label
+                  >
+                  <input
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    class="form_input"
+                    placeholder="Nome"
+                    required
+                  />
+                  <span class="error-message">Este campo é obrigatório.</span>
+                </div>
+
+                <!--Data de nascimento-->
+                <div class="form_grupo">
+                  <label for="datanascimento" class="form_label"
+                    >Data de Nascimento</label
+                  >
+                  <input
+                    type="date"
+                    name="datanascimento"
+                    class="form_input"
+                    id="datanascimento"
+                    required
+                  />
+                  <span class="error-message">Este campo é obrigatório.</span>
+                </div>
+
+                <!--RG-->
+                <div class="form_grupo">
+                  <label for="rg" class="form_label">RG do Aluno</label>
+                  <input
+                    type="text"
+                    name="rg"
+                    class="form_input"
+                    id="rg"
+                    placeholder="RG do Aluno"
+                    required
+                  />
+                  <span class="error-message">Este campo é obrigatório.</span>
+                </div>
+
+                <!--CPF-->
+                <div class="form_grupo">
+                  <label for="cpf" class="form_label">CPF do Aluno</label>
+                  <input
+                    type="text"
+                    name="cpf"
+                    class="form_input"
+                    id="cpf"
+                    placeholder="CPF do Aluno"
+                    required
+                  />
+                  <span class="error-message">Este campo é obrigatório.</span>
+                </div>
+
+                <!-- SEXO -->
+                <div class="form_grupo">
+                  <label for="nome" class="form_label">Gênero:</label>
+                  <div class="radio-btn">
+                    <input
+                      type="radio"
+                      class="form_new_input"
+                      id="masculino"
+                      name="sexo"
+                      value="Masculino"
+                      required
+                    />
+                    <span class="error-message">Este campo é obrigatório.</span>
+                    <label for="masculino" class="radio_label form_label">
+                      <span class="radio_new_btn"></span> Masculino
+                    </label>
+                  </div>
+                  <div class="radio-btn">
+                    <input
+                      type="radio"
+                      class="form_new_input"
+                      id="feminino"
+                      name="sexo"
+                      value="Feminino"
+                      required
+                    />
+                    <label for="feminino" class="radio_label form_label">
+                      <span class="radio_new_btn"></span> Feminino
+                    </label>
+                  </div>
+                </div>
+
+                <!--Email do Aluno-->
+                <div class="form_grupo">
+                  <label for="e-mail" class="form_label">Email do aluno</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form_input"
+                    id="email"
+                    placeholder="email@email.com"
+                    required
+                  />
+                </div>
+
+                <!--Nome da mãe-->
+                <div class="form_grupo">
+                  <label for="nomemae" class="form_label">Nome da mãe</label>
+                  <input
+                    type="text"
+                    name="nomemae"
+                    class="form_input"
+                    id="nomemae"
+                    placeholder="Nome completo da mãe"
+                    required
+                  />
+                </div>
+
+                <!--Nome do pai-->
+                <div class="form_grupo">
+                  <label for="nomepai" class="form_label">Nome do pai</label>
+                  <input
+                    type="text"
+                    name="nomepai"
+                    class="form_input"
+                    id="nomepai"
+                    placeholder="Nome completo do pai"
+                    required
+                  />
+                </div>
+
+                <!--Telefone para contato-->
+                <div class="form_grupo">
+                  <label for="telefone" class="form_label"
+                    >Telefone para contato</label
+                  >
+                  <input
+                    type="text"
+                    name="telefone"
+                    class="form_input"
+                    id="telefone"
+                    placeholder="(99)99999-9999"
+                    required
+                  />
+                </div>
+
+                <!--ENDEREÇO COMPLETO-->
+                <div class="form_grupo">
+                  <label for="rua" class="form_label">Endereço completo</label>
+                  <input
+                    type="text"
+                    name="rua"
+                    class="form_input"
+                    id="rua"
+                    placeholder="Rua"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="numero"
+                    class="form_input"
+                    id="numero"
+                    placeholder="Número"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="bairro"
+                    class="form_input"
+                    id="bairro"
+                    placeholder="Bairro"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="cep"
+                    class="form_input"
+                    id="cep"
+                    placeholder="CEP"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="cidade"
+                    class="form_input"
+                    id="cidade"
+                    placeholder="Cidade"
+                    required
+                  />
+
+                  <!--Estado-->
+                  <select class="form_input" id="uf" required>
+                    <option selected disabled value="">UF</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                  </select>
+                </div>
+
+                <!--BOTÃO FINALIZAR-->
+                <div class="submit">
+                  <input type="hidden" name="acao" value="enviar" />
+                  <button type="submit" name="Submit" class="submit_btn">
+                    Cadastrar
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!--container_form-->
+            <!--Finaliza Formulário-->
+          </div>
+          <!--Box Artigo-->
+          <div class="clear"></div>
+        </div>
+      </section>
+      <!--FECHA BOX HTML-->
+    </main>
+
+    <footer class="main_footer container">
+      <div class="main_footer_copy">
+        <p class="m-b-footer">
+          Instituto Sementes do Futuro - 2021, todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
