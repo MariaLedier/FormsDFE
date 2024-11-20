@@ -1,3 +1,5 @@
+//_______________________________________________________________________________
+//VALIDAÇÃO DATA
 // Validação de data de nascimento para garantir que o aluno tenha entre 5 e 18 anos
 document
   .getElementById("datanascimento")
@@ -25,7 +27,7 @@ document
     } else if (idade > 18) {
       regras.style.display = "block"; // Exibe a mensagem de regras
       regras.innerHTML =
-        '<p style="color: red;">A idade máxima para cadastro é 18 anos.</p>';
+        '<p style="color: red;">A idade máxima para cadastro é 17 anos.</p>';
       this.setCustomValidity("Idade máxima de 18 anos.");
     } else {
       regras.style.display = "none"; // Se a idade estiver dentro da faixa, esconde a mensagem
@@ -33,45 +35,15 @@ document
     }
   });
 
-//VALIDAÇÃO CPF
+//_______________________________________________________________________________
+//VALIDAÇÃO RG
+// Validação para garantir que apenas números sejam digitados no campo RG
+document.getElementById("rg").addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, ""); // Substitui qualquer caractere não numérico por nada
+});
 
-// Validação de data de nascimento para garantir que o aluno tenha entre 5 e 18 anos
-document
-  .getElementById("datanascimento")
-  .addEventListener("input", function () {
-    const dataNascimento = new Date(this.value);
-    const dataAtual = new Date();
-    const idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
-    const mes = dataAtual.getMonth() - dataNascimento.getMonth();
-    const dia = dataAtual.getDate() - dataNascimento.getDate();
-
-    // Ajusta a idade se a data de nascimento ainda não fez aniversário neste ano
-    if (mes < 0 || (mes === 0 && dia < 0)) {
-      idade--;
-    }
-
-    // Mostra ou esconde as regras
-    const regras = document.getElementById("regras-datanascimento");
-    regras.style.display = "block"; // Exibe a mensagem de regras
-
-    // Valida a idade
-    if (idade < 5) {
-      regras.innerHTML =
-        '<p style="color: red;">A idade mínima para cadastro é 5 anos.</p>';
-      this.setCustomValidity("Idade mínima de 5 anos.");
-    } else if (idade > 18) {
-      regras.innerHTML =
-        '<p style="color: red;">A idade máxima para cadastro é 18 anos.</p>';
-      this.setCustomValidity("Idade máxima de 18 anos.");
-    } else {
-      regras.innerHTML =
-        "<p>Por favor, insira uma data de nascimento entre 5 e 18 anos.</p>";
-      this.setCustomValidity(""); // Limpa qualquer mensagem de erro
-    }
-  });
-
+//_________________________________________________________________________________
 //VALIDAR CPF
-
 // Formatar CPF enquanto o usuário digita
 document.getElementById("cpf").addEventListener("input", function (e) {
   let cpf = e.target.value;
@@ -107,7 +79,6 @@ document.getElementById("cpf").addEventListener("blur", function () {
   }
 });
 
-// Função para validar o CPF
 // Função para validar o CPF
 document.getElementById("cpf").addEventListener("input", function () {
   var cpf = this.value;
@@ -158,9 +129,75 @@ function isValidCPF(cpf) {
   return rest === parseInt(cpf.charAt(10));
 }
 
-//VALIDAÇÃO RG
+//TELEFONE
+//___________________________________________________________________________
 
-// Validação para garantir que apenas números sejam digitados no campo RG
-document.getElementById("rg").addEventListener("input", function () {
-  this.value = this.value.replace(/\D/g, ""); // Substitui qualquer caractere não numérico por nada
+// Função para formatar o telefone enquanto o usuário digita
+document.getElementById("telefone").addEventListener("input", function (e) {
+  var telefone = e.target.value;
+
+  // Remove caracteres não numéricos
+  telefone = telefone.replace(/\D/g, "");
+
+  // Aplica a formatação do telefone
+  if (telefone.length <= 2) {
+    telefone = "(" + telefone;
+  } else if (telefone.length <= 6) {
+    telefone = "(" + telefone.slice(0, 2) + ") " + telefone.slice(2);
+  } else if (telefone.length <= 10) {
+    telefone =
+      "(" +
+      telefone.slice(0, 2) +
+      ") " +
+      telefone.slice(2, 7) +
+      "-" +
+      telefone.slice(7);
+  } else {
+    telefone =
+      "(" +
+      telefone.slice(0, 2) +
+      ") " +
+      telefone.slice(2, 7) +
+      "-" +
+      telefone.slice(7, 11);
+  }
+
+  // Atualiza o campo com a formatação
+  e.target.value = telefone;
+
+  // Valida o telefone
+  var telefoneError = document.getElementById("telefoneError");
+  if (telefone.length === 15) {
+    telefoneError.style.display = "none"; // Oculta a mensagem de erro
+  } else {
+    telefoneError.style.display = "block"; // Exibe a mensagem de erro
+  }
+});
+
+//VALIDAR CEP
+//_____________________________________________________________________
+// Função para formatar o CEP enquanto o usuário digita
+document.getElementById("cep").addEventListener("input", function (e) {
+  var cep = e.target.value;
+
+  // Remove caracteres não numéricos
+  cep = cep.replace(/\D/g, "");
+
+  // Aplica a formatação do CEP (XXXXX-XXX)
+  if (cep.length <= 5) {
+    cep = cep.slice(0, 5);
+  } else {
+    cep = cep.slice(0, 5) + "-" + cep.slice(5, 8);
+  }
+
+  // Atualiza o campo com a formatação
+  e.target.value = cep;
+
+  // Valida o CEP
+  var cepError = document.getElementById("cepError");
+  if (cep.length === 10) {
+    cepError.style.display = "none"; // Oculta a mensagem de erro
+  } else {
+    cepError.style.display = "block"; // Exibe a mensagem de erro
+  }
 });
