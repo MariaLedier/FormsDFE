@@ -3,13 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <meta http-equiv="content-language" content="pt-br" />
     <meta name="robots" content="index, follow" />
-
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
     <title>Cadastro Aluno</title>
   </head>
 
@@ -29,13 +26,14 @@
             <!--Inicia Formulário-->
             <div class="container_form">
               <h1>Cadastro de Alunos</h1>
-              <p>* Obrigatório</p>
+              <p>* Campos obrigatórios</p>
 
               <form id="cadastro" class="form">
                 <!--Nome do aluno-->
                 <div class="form_grupo error">
-                  <label for="nome" class="form_input"
-                    >Nome completo do aluno:</label
+                  <label for="nome" class="form_label"
+                    >Nome completo do aluno
+                    <span class="obrigatorio">*</span></label
                   >
                   <input
                     type="text"
@@ -51,7 +49,8 @@
                 <!--Data de nascimento-->
                 <div class="form_grupo">
                   <label for="datanascimento" class="form_label"
-                    >Data de Nascimento</label
+                    >Data de Nascimento
+                    <span class="obrigatorio">*</span></label
                   >
                   <input
                     type="date"
@@ -71,14 +70,16 @@
 
                 <!--RG-->
                 <div class="form_grupo">
-                  <label for="rg" class="form_label">RG do Aluno</label>
+                  <label for="rg" class="form_label"
+                    >RG do Aluno <span class="obrigatorio">*</span></label
+                  >
                   <input
                     type="text"
                     name="rg"
                     class="form_input"
                     id="rg"
                     placeholder="RG do Aluno"
-                    maxlength="12"
+                    maxlength="7"
                     required
                   />
                   <span class="error-message">Este campo é obrigatório.</span>
@@ -86,7 +87,9 @@
 
                 <!--CPF-->
                 <div class="form_grupo">
-                  <label for="cpf" class="form_label">CPF do Aluno</label>
+                  <label for="cpf" class="form_label"
+                    >CPF do Aluno <span class="obrigatorio">*</span></label
+                  >
                   <input
                     type="text"
                     name="cpf"
@@ -106,7 +109,9 @@
 
                 <!-- SEXO -->
                 <div class="form_grupo">
-                  <label for="nome" class="form_label">Gênero:</label>
+                  <label for="sexo" class="form_label"
+                    >Gênero <span class="obrigatorio">*</span></label
+                  >
                   <div class="radio-btn">
                     <input
                       type="radio"
@@ -138,7 +143,9 @@
 
                 <!--Email do Aluno-->
                 <div class="form_grupo">
-                  <label for="e-mail" class="form_label">Email do aluno</label>
+                  <label for="e-mail" class="form_label"
+                    >Email do aluno <span class="obrigatorio">*</span></label
+                  >
                   <input
                     type="email"
                     name="email"
@@ -151,7 +158,9 @@
 
                 <!--Nome da mãe-->
                 <div class="form_grupo">
-                  <label for="nomemae" class="form_label">Nome da mãe</label>
+                  <label for="nomemae" class="form_label"
+                    >Nome da mãe <span class="obrigatorio">*</span></label
+                  >
                   <input
                     type="text"
                     name="nomemae"
@@ -164,7 +173,9 @@
 
                 <!--Nome do pai-->
                 <div class="form_grupo">
-                  <label for="nomepai" class="form_label">Nome do pai</label>
+                  <label for="nomepai" class="form_label"
+                    >Nome do pai <span class="obrigatorio">*</span></label
+                  >
                   <input
                     type="text"
                     name="nomepai"
@@ -178,7 +189,8 @@
                 <!--Telefone para contato-->
                 <div class="form_grupo">
                   <label for="telefone" class="form_label"
-                    >Telefone para contato</label
+                    >Telefone para contato
+                    <span class="obrigatorio">*</span></label
                   >
                   <input
                     type="text"
@@ -200,7 +212,9 @@
 
                 <!--ENDEREÇO COMPLETO-->
                 <div class="form_grupo">
-                  <label for="rua" class="form_label">Endereço completo</label>
+                  <label for="rua" class="form_label"
+                    >Endereço completo <span class="obrigatorio">*</span></label
+                  >
                   <input
                     type="text"
                     name="rua"
@@ -244,7 +258,9 @@
 
                   <!--Estado-->
                   <select class="form_input" id="uf" required>
-                    <option selected disabled value="">UF</option>
+                    <option selected disabled value="">
+                      UF <span class="obrigatorio">*</span>
+                    </option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
                     <option value="AP">AP</option>
@@ -302,7 +318,6 @@
       </div>
     </footer>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/validar.js"></script>
   </body>
 </html>

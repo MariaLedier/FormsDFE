@@ -81,12 +81,18 @@
   padding-bottom: 10px;
 }
 
+.obrigatorio {
+  color: red; /* Cor vermelha para destacar */
+  font-weight: bold; /* Negrito para aumentar a visibilidade */
+  font-size: 0.8em; /* Tamanho maior para o asterisco */
+  margin-left: 5px; /* Espaço entre o texto e o asterisco */
+}
 .container_form p {
   font-family: "open_sansregular";
   font-size: 0.8em;
   color: #ff0000;
   margin-bottom: 2px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 .form_grupo {
   width: 100%;
