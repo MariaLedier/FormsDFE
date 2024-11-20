@@ -107,38 +107,19 @@
                   >
                 </div>
 
-                <!-- SEXO -->
+                <!-- Gênero -->
                 <div class="form_grupo">
-                  <label for="sexo" class="form_label"
-                    >Gênero <span class="obrigatorio">*</span></label
-                  >
-                  <div class="radio-btn">
-                    <input
-                      type="radio"
-                      class="form_new_input"
-                      id="masculino"
-                      name="sexo"
-                      value="Masculino"
-                      required
-                    />
-                    <span class="error-message">Este campo é obrigatório.</span>
-                    <label for="masculino" class="radio_label form_label">
-                      <span class="radio_new_btn"></span> Masculino
-                    </label>
-                  </div>
-                  <div class="radio-btn">
-                    <input
-                      type="radio"
-                      class="form_new_input"
-                      id="feminino"
-                      name="sexo"
-                      value="Feminino"
-                      required
-                    />
-                    <label for="feminino" class="radio_label form_label">
-                      <span class="radio_new_btn"></span> Feminino
-                    </label>
-                  </div>
+                  <label for="genero" class="form_label">Gênero:</label>
+                  <select name="genero" id="genero" class="form_input" required>
+                    <option value="" disabled selected>
+                      Selecione seu gênero
+                    </option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                    <option value="Prefiro não dizer">Prefiro não dizer</option>
+                  </select>
+                  <span class="error-message">Este campo é obrigatório.</span>
                 </div>
 
                 <!--Email do Aluno-->
