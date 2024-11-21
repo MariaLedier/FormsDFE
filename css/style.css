@@ -279,6 +279,13 @@
   display: none; /* Inicialmente oculta */
 }
 
+.obrigatorio {
+  color: red; /* Cor vermelha para destacar */
+  font-weight: bold; /* Negrito para aumentar a visibilidade */
+  font-size: 0.7em; /* Tamanho maior para o asterisco */
+  margin-left: 5px; /* Espaço entre o texto e o asterisco */
+}
+
 /*Formulário*/
 
 /*FOOTER*/

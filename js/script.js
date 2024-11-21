@@ -201,3 +201,36 @@ document.getElementById("cep").addEventListener("input", function (e) {
     cepError.style.display = "block"; // Exibe a mensagem de erro
   }
 });
+
+// VALIDAÇÃO EMAIL
+//_________________________________________________________________
+document.addEventListener("DOMContentLoaded", () => {
+  const emailInput = document.querySelector("#email");
+  const emailError = document.querySelector("#emailError");
+
+  // Função de validação de e-mail
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex simples para validar e-mails
+    return emailRegex.test(email);
+  };
+
+  // Evento de validação
+  emailInput.addEventListener("input", () => {
+    const emailValue = emailInput.value.trim();
+
+    if (!validateEmail(emailValue)) {
+      emailError.style.display = "block";
+    } else {
+      emailError.style.display = "none";
+    }
+  });
+
+  // Validar ao enviar o formulário
+  const form = document.querySelector("#cadastro");
+  form.addEventListener("submit", (e) => {
+    if (!validateEmail(emailInput.value.trim())) {
+      e.preventDefault();
+      emailError.style.display = "block";
+    }
+  });
+});
